@@ -20,26 +20,28 @@ public class OpenApiConfig {
         return new OpenAPI()
 
                 .info(new Info()
-                        .title("RideHub Platform API")
-                        .version("1.0")
-                        .description("Backend REST API for RideHub Platform")
+                        .title("RideHub Driver Service API")
+                        .version("1.0.0")
+                        .description("Microservice responsible for driver management in the RideHub platform.")
                         .contact(new Contact()
-                                .name("Sahasra Muthyala")))
+                                .name("Sahasra Muthyala")
+                                .email("sahasra@example.com")))
 
                 .addSecurityItem(
                         new SecurityRequirement()
-                                .addList(securitySchemeName))
+                                .addList(securitySchemeName)
+                )
 
                 .components(
                         new Components()
                                 .addSecuritySchemes(
                                         securitySchemeName,
-
                                         new SecurityScheme()
                                                 .name(securitySchemeName)
                                                 .type(SecurityScheme.Type.HTTP)
                                                 .scheme("bearer")
                                                 .bearerFormat("JWT")
-                                ));
+                                )
+                );
     }
 }
