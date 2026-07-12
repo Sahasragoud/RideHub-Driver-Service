@@ -49,7 +49,7 @@ public class JwtService {
                 .before(new Date());
     }
 
-    private Claims extractAllClaims(String token) {
+    public Claims extractAllClaims(String token) {
 
         return Jwts.parser()
                 .verifyWith(getSigningKey())
@@ -64,4 +64,15 @@ public class JwtService {
                 jwtProperties.getSecret().getBytes()
         );
     }
+
+    public String extractRole(String token) {
+        return extractAllClaims(token)
+                .get("role", String.class);
+    }
+
+    public Long extractUserId(String token) {
+        return extractAllClaims(token)
+                .get("userId", Long.class);
+    }
+
 }
