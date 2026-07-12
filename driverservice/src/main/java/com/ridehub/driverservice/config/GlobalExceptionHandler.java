@@ -1,9 +1,9 @@
 package com.ridehub.driverservice.config;
 
-import com.rideHub.authService.dto.responses.ErrorResponse;
-import com.rideHub.authService.exception.EmailAlreadyExistsException;
-import com.rideHub.authService.exception.InvalidCredentialsException;
-import com.rideHub.authService.exception.ResourceNotFoundException;
+import com.ridehub.driverservice.dto.response.ErrorResponse;
+import com.ridehub.driverservice.exception.BadRequestException;
+import com.ridehub.driverservice.exception.DuplicateResourceException;
+import com.ridehub.driverservice.exception.ResourceNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -17,36 +17,6 @@ import java.time.LocalDateTime;
 @RestControllerAdvice
 @Slf4j
 public class GlobalExceptionHandler {
-
-    @ExceptionHandler(EmailAlreadyExistsException.class)
-    public ResponseEntity<ErrorResponse> handleEmailExists(
-            EmailAlreadyExistsException ex,
-            HttpServletRequest request) {
-
-        log.warn("Registration failed: {}", ex.getMessage());
-
-        return ResponseEntity.status(HttpStatus.CONFLICT)
-                .body(buildError(
-                        HttpStatus.CONFLICT,
-                        ex.getMessage(),
-                        request
-                ));
-    }
-
-    @ExceptionHandler(InvalidCredentialsException.class)
-    public ResponseEntity<ErrorResponse> handleInvalidCredentials(
-            InvalidCredentialsException ex,
-            HttpServletRequest request) {
-
-        log.warn("Authentication failed: {}", ex.getMessage());
-
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                .body(buildError(
-                        HttpStatus.UNAUTHORIZED,
-                        ex.getMessage(),
-                        request
-                ));
-    }
 
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<ErrorResponse> handleResourceNotFound(
@@ -63,6 +33,36 @@ public class GlobalExceptionHandler {
                 ));
     }
 
+    @ExceptionHandler(DuplicateResourceException.class)
+    public ResponseEntity<ErrorResponse> handleDuplicateResource(
+            DuplicateResourceException ex,
+            HttpServletRequest request) {
+
+        log.warn("Duplicate resource: {}", ex.getMessage());
+
+        return ResponseEntity.status(HttpStatus.CONFLICT)
+                .body(buildError(
+                        HttpStatus.CONFLICT,
+                        ex.getMessage(),
+                        request
+                ));
+    }
+
+    @ExceptionHandler(BadRequestException.class)
+    public ResponseEntity<ErrorResponse> handleBadRequest(
+            BadRequestException ex,
+            HttpServletRequest request) {
+
+        log.warn("Bad request: {}", ex.getMessage());
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(buildError(
+                        HttpStatus.BAD_REQUEST,
+                        ex.getMessage(),
+                        request
+                ));
+    }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorResponse> handleValidation(
             MethodArgumentNotValidException ex,
@@ -72,7 +72,7 @@ public class GlobalExceptionHandler {
                 .getFieldErrors()
                 .stream()
                 .findFirst()
-                .map(field -> field.getDefaultMessage())
+                .map(error -> error.getDefaultMessage())
                 .orElse("Validation failed.");
 
         log.warn("Validation failed: {}", message);
@@ -90,7 +90,7 @@ public class GlobalExceptionHandler {
             Exception ex,
             HttpServletRequest request) {
 
-        log.error("Unhandled exception occurred", ex);
+        log.error("Unexpected exception occurred", ex);
 
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(buildError(
