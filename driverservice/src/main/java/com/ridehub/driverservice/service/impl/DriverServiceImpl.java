@@ -6,7 +6,11 @@ import com.ridehub.driverservice.dto.request.DriverUpdateRequest;
 import com.ridehub.driverservice.dto.response.DriverAvailabilityResponse;
 import com.ridehub.driverservice.dto.response.DriverResponse;
 import com.ridehub.driverservice.entity.Driver;
+import com.ridehub.driverservice.enums.AvailabilityStatus;
+import com.ridehub.driverservice.enums.DriverStatus;
+import com.ridehub.driverservice.exception.BadRequestException;
 import com.ridehub.driverservice.exception.DuplicateResourceException;
+import com.ridehub.driverservice.exception.OperationNotAllowedException;
 import com.ridehub.driverservice.exception.ResourceNotFoundException;
 import com.ridehub.driverservice.repository.DriverRepository;
 import com.ridehub.driverservice.service.interfaces.DriverService;
@@ -134,6 +138,7 @@ public class DriverServiceImpl implements DriverService {
             Long userId,
             DriverAvailabilityUpdateRequest request) {
 
+
         log.info("Updating availability for userId: {}", userId);
 
         Driver driver = driverRepository.findByUserId(userId)
@@ -141,6 +146,12 @@ public class DriverServiceImpl implements DriverService {
                         new ResourceNotFoundException(
                                 "Driver profile not found."));
 
+        if (request.getAvailability() == AvailabilityStatus.ONLINE
+                && driver.getStatus() != DriverStatus.APPROVED) {
+
+            throw new OperationNotAllowedException(
+                    "Driver must be approved before going online.");
+        }
         driver.setAvailability(request.getAvailability());
 
         Driver updatedDriver = driverRepository.save(driver);

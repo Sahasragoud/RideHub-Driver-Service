@@ -3,6 +3,7 @@ package com.ridehub.driverservice.config;
 import com.ridehub.driverservice.dto.response.ErrorResponse;
 import com.ridehub.driverservice.exception.BadRequestException;
 import com.ridehub.driverservice.exception.DuplicateResourceException;
+import com.ridehub.driverservice.exception.OperationNotAllowedException;
 import com.ridehub.driverservice.exception.ResourceNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
@@ -43,6 +44,21 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.CONFLICT)
                 .body(buildError(
                         HttpStatus.CONFLICT,
+                        ex.getMessage(),
+                        request
+                ));
+    }
+
+    @ExceptionHandler(OperationNotAllowedException.class)
+    public ResponseEntity<ErrorResponse> handleDuplicateResource(
+            OperationNotAllowedException ex,
+            HttpServletRequest request) {
+
+        log.warn("Task not allowed: {}", ex.getMessage());
+
+        return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                .body(buildError(
+                        HttpStatus.FORBIDDEN,
                         ex.getMessage(),
                         request
                 ));
@@ -99,6 +115,8 @@ public class GlobalExceptionHandler {
                         request
                 ));
     }
+
+
 
     private ErrorResponse buildError(
             HttpStatus status,
