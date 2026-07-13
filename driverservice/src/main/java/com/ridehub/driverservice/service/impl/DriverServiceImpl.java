@@ -4,6 +4,8 @@ import com.ridehub.driverservice.dto.request.DriverRegistrationRequest;
 import com.ridehub.driverservice.dto.request.DriverUpdateRequest;
 import com.ridehub.driverservice.dto.response.DriverResponse;
 import com.ridehub.driverservice.entity.Driver;
+import com.ridehub.driverservice.exception.DuplicateResourceException;
+import com.ridehub.driverservice.exception.ResourceNotFoundException;
 import com.ridehub.driverservice.repository.DriverRepository;
 import com.ridehub.driverservice.service.interfaces.DriverService;
 import lombok.RequiredArgsConstructor;
@@ -25,17 +27,18 @@ public class DriverServiceImpl implements DriverService {
         log.info("Driver registration request received for userId: {}", userId);
 
         if (driverRepository.existsByUserId(userId)) {
-            throw new IllegalArgumentException(
+
+            throw new DuplicateResourceException(
                     "Driver profile already exists.");
         }
 
         if (driverRepository.existsByLicenseNumber(request.getLicenseNumber())) {
-            throw new IllegalArgumentException(
+            throw new DuplicateResourceException(
                     "License number already registered.");
         }
 
         if (driverRepository.existsByVehicleNumber(request.getVehicleNumber())) {
-            throw new IllegalArgumentException(
+            throw new DuplicateResourceException(
                     "Vehicle number already registered.");
         }
 
@@ -61,7 +64,16 @@ public class DriverServiceImpl implements DriverService {
     @Override
     public DriverResponse getDriverProfile(Long userId) {
 
-        return null;
+        log.info("Fetching driver profile for userId: {}", userId);
+
+        Driver driver = driverRepository.findByUserId(userId)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException(
+                                "Driver profile not found."));
+
+        log.info("Driver profile found. Driver ID: {}", driver.getId());
+
+        return mapToResponse(driver);
     }
 
     @Override
