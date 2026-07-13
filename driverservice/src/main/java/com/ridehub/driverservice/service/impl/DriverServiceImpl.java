@@ -81,7 +81,34 @@ public class DriverServiceImpl implements DriverService {
             Long userId,
             DriverUpdateRequest request) {
 
-        return null;
+        log.info("Updating driver profile for userId: {}", userId);
+
+        Driver driver = driverRepository.findByUserId(userId)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException(
+                                "Driver profile not found."));
+
+        // Vehicle number can be changed, but must remain unique
+        if (!driver.getVehicleNumber().equals(request.getVehicleNumber())
+                && driverRepository.existsByVehicleNumber(request.getVehicleNumber())) {
+
+            throw new DuplicateResourceException(
+                    "Vehicle number already registered.");
+        }
+
+        driver.setLicenseExpiry(request.getLicenseExpiry());
+        driver.setVehicleNumber(request.getVehicleNumber());
+        driver.setVehicleType(request.getVehicleType());
+        driver.setVehicleModel(request.getVehicleModel());
+        driver.setVehicleColor(request.getVehicleColor());
+        driver.setExperienceYears(request.getExperienceYears());
+
+        Driver updatedDriver = driverRepository.save(driver);
+
+        log.info("Driver profile updated successfully. Driver ID: {}",
+                updatedDriver.getId());
+
+        return mapToResponse(updatedDriver);
     }
 
     @Override
