@@ -1,5 +1,6 @@
 package com.ridehub.driverservice.controller;
 
+import com.ridehub.driverservice.dto.request.DriverAvailabilityUpdateRequest;
 import com.ridehub.driverservice.dto.request.DriverRegistrationRequest;
 import com.ridehub.driverservice.dto.request.DriverUpdateRequest;
 import com.ridehub.driverservice.dto.response.DriverResponse;
@@ -60,6 +61,22 @@ public class DriverController {
 
         DriverResponse response =
                 driverService.updateDriver(userId, request);
+
+        return ResponseEntity.ok(response);
+    }
+
+
+    @PutMapping("/me/availability")
+    public ResponseEntity<DriverResponse> updateAvailability(
+            @Valid @RequestBody DriverAvailabilityUpdateRequest request,
+            @RequestHeader("Authorization") String authHeader) {
+
+        String token = authHeader.substring(7);
+
+        Long userId = jwtService.extractUserId(token);
+
+        DriverResponse response =
+                driverService.updateAvailability(userId, request);
 
         return ResponseEntity.ok(response);
     }
