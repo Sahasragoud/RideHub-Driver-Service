@@ -114,8 +114,18 @@ public class DriverServiceImpl implements DriverService {
     @Override
     public void deleteDriver(Long userId) {
 
-    }
+        log.info("Deleting driver profile for userId: {}", userId);
 
+        Driver driver = driverRepository.findByUserId(userId)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException(
+                                "Driver profile not found."));
+
+        driverRepository.delete(driver);
+
+        log.info("Driver profile deleted successfully. Driver ID: {}",
+                driver.getId());
+    }
 
     private DriverResponse mapToResponse(Driver driver) {
 
