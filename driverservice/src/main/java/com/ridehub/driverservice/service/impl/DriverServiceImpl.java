@@ -1,7 +1,9 @@
 package com.ridehub.driverservice.service.impl;
 
+import com.ridehub.driverservice.dto.request.DriverAvailabilityUpdateRequest;
 import com.ridehub.driverservice.dto.request.DriverRegistrationRequest;
 import com.ridehub.driverservice.dto.request.DriverUpdateRequest;
+import com.ridehub.driverservice.dto.response.DriverAvailabilityResponse;
 import com.ridehub.driverservice.dto.response.DriverResponse;
 import com.ridehub.driverservice.entity.Driver;
 import com.ridehub.driverservice.exception.DuplicateResourceException;
@@ -125,6 +127,45 @@ public class DriverServiceImpl implements DriverService {
 
         log.info("Driver profile deleted successfully. Driver ID: {}",
                 driver.getId());
+    }
+
+    @Override
+    public DriverResponse updateAvailability(
+            Long userId,
+            DriverAvailabilityUpdateRequest request) {
+
+        log.info("Updating availability for userId: {}", userId);
+
+        Driver driver = driverRepository.findByUserId(userId)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException(
+                                "Driver profile not found."));
+
+        driver.setAvailability(request.getAvailability());
+
+        Driver updatedDriver = driverRepository.save(driver);
+
+        log.info(
+                "Driver {} availability changed to {}",
+                updatedDriver.getId(),
+                updatedDriver.getAvailability());
+
+        return mapToResponse(updatedDriver);
+    }
+
+    @Override
+    public DriverAvailabilityResponse getAvailability(Long userId) {
+
+        log.info("Fetching availability for userId: {}", userId);
+
+        Driver driver = driverRepository.findByUserId(userId)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException(
+                                "Driver profile not found."));
+
+        return DriverAvailabilityResponse.builder()
+                .availability(driver.getAvailability())
+                .build();
     }
 
     private DriverResponse mapToResponse(Driver driver) {

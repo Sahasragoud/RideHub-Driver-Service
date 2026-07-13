@@ -3,6 +3,7 @@ package com.ridehub.driverservice.controller;
 import com.ridehub.driverservice.dto.request.DriverAvailabilityUpdateRequest;
 import com.ridehub.driverservice.dto.request.DriverRegistrationRequest;
 import com.ridehub.driverservice.dto.request.DriverUpdateRequest;
+import com.ridehub.driverservice.dto.response.DriverAvailabilityResponse;
 import com.ridehub.driverservice.dto.response.DriverResponse;
 import com.ridehub.driverservice.security.service.JwtService;
 import com.ridehub.driverservice.service.interfaces.DriverService;
@@ -77,6 +78,20 @@ public class DriverController {
 
         DriverResponse response =
                 driverService.updateAvailability(userId, request);
+
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/me/availability")
+    public ResponseEntity<DriverAvailabilityResponse> getAvailability(
+            @RequestHeader("Authorization") String authHeader) {
+
+        String token = authHeader.substring(7);
+
+        Long userId = jwtService.extractUserId(token);
+
+        DriverAvailabilityResponse response =
+                driverService.getAvailability(userId);
 
         return ResponseEntity.ok(response);
     }
