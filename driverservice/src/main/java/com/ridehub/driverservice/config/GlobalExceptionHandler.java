@@ -3,7 +3,7 @@ package com.ridehub.driverservice.config;
 import com.ridehub.driverservice.dto.response.ErrorResponse;
 import com.ridehub.driverservice.exception.BadRequestException;
 import com.ridehub.driverservice.exception.DuplicateResourceException;
-import com.ridehub.driverservice.exception.OperationNotAllowedException;
+import com.ridehub.driverservice.exception.BusinessRuleViolationException;
 import com.ridehub.driverservice.exception.ResourceNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
@@ -49,9 +49,9 @@ public class GlobalExceptionHandler {
                 ));
     }
 
-    @ExceptionHandler(OperationNotAllowedException.class)
+    @ExceptionHandler(BusinessRuleViolationException.class)
     public ResponseEntity<ErrorResponse> handleDuplicateResource(
-            OperationNotAllowedException ex,
+            BusinessRuleViolationException ex,
             HttpServletRequest request) {
 
         log.warn("Task not allowed: {}", ex.getMessage());

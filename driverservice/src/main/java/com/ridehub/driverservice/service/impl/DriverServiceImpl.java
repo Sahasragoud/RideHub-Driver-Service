@@ -8,9 +8,8 @@ import com.ridehub.driverservice.dto.response.DriverResponse;
 import com.ridehub.driverservice.entity.Driver;
 import com.ridehub.driverservice.enums.AvailabilityStatus;
 import com.ridehub.driverservice.enums.DriverStatus;
-import com.ridehub.driverservice.exception.BadRequestException;
 import com.ridehub.driverservice.exception.DuplicateResourceException;
-import com.ridehub.driverservice.exception.OperationNotAllowedException;
+import com.ridehub.driverservice.exception.BusinessRuleViolationException;
 import com.ridehub.driverservice.exception.ResourceNotFoundException;
 import com.ridehub.driverservice.repository.DriverRepository;
 import com.ridehub.driverservice.service.interfaces.DriverService;
@@ -149,9 +148,30 @@ public class DriverServiceImpl implements DriverService {
         if (request.getAvailability() == AvailabilityStatus.ONLINE
                 && driver.getStatus() != DriverStatus.APPROVED) {
 
-            throw new OperationNotAllowedException(
+            throw new BusinessRuleViolationException(
                     "Driver must be approved before going online.");
         }
+
+        if (driver.getAvailability() == AvailabilityStatus.ON_TRIP &&
+                request.getAvailability() == AvailabilityStatus.OFFLINE) {
+
+            throw new BusinessRuleViolationException(
+                    "Driver cannot go OFFLINE while on a trip.");
+        }
+
+        if (driver.getAvailability() == AvailabilityStatus.ON_TRIP &&
+                request.getAvailability() == AvailabilityStatus.ONLINE) {
+
+            throw new BusinessRuleViolationException(
+                    "Driver is currently on a trip.");
+        }
+
+        if (driver.getAvailability() == request.getAvailability()) {
+
+            throw new BusinessRuleViolationException(
+                    "Driver is already " + request.getAvailability() + ".");
+        }
+
         driver.setAvailability(request.getAvailability());
 
         Driver updatedDriver = driverRepository.save(driver);
