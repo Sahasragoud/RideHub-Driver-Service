@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3916cbe5-c192-459b-9273-5ceb5c7d2d38" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/driverservice/src/main/java/com/ridehub/driverservice/dto/request/DriverAvailabilityUpdateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/driverservice/src/main/java/com/ridehub/driverservice/dto/request/DriverAvailabilityUpdateRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/driverservice/src/main/java/com/ridehub/driverservice/kafka/consumer/RideEventConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/driverservice/src/main/java/com/ridehub/driverservice/kafka/consumer/RideEventConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/driverservice/src/main/java/com/ridehub/driverservice/kafka/dto/RideCancelledEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/driverservice/src/main/java/com/ridehub/driverservice/kafka/dto/RideCancelledEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/driverservice/src/main/java/com/ridehub/driverservice/security/service/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/driverservice/src/main/java/com/ridehub/driverservice/security/service/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/driverservice/src/main/java/com/ridehub/driverservice/service/impl/DriverServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/driverservice/src/main/java/com/ridehub/driverservice/service/impl/DriverServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/driverservice/src/test/java/com/ridehub/driverservice/DriverserviceApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="62" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Exception" />
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.4677712372751425E-33" />
+      <entry key="MS500" value="2.7122622200789523E-7" />
+      <entry key="S2" value="0.022834353402667863" />
+      <entry key="S5" value="0.2354554261447852" />
+      <entry key="S10" value="0.6379613827182953" />
+      <entry key="S30" value="1.6482052264300426" />
+      <entry key="S60" value="2.2003485547491772" />
+      <entry key="M2" value="2.5626372688350094" />
+      <entry key="M5" value="2.815106586856127" />
+      <entry key="M10" value="2.9427148221484405" />
+      <entry key="M15" value="3.328545494982736" />
+      <entry key="M30" value="8.289610149790908" />
+      <entry key="H1" value="30.172850333424165" />
+      <entry key="H2" value="84.39387680462514" />
+      <entry key="H4" value="164.14929545023247" />
+      <entry key="D1" value="313.16859552067433" />
+      <entry key="W1" value="352.83146396394284" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="1.0000000860648868" />
+      <entry key="MS500" value="1.0386336019757627" />
+      <entry key="S2" value="1.4479796735881836" />
+      <entry key="S5" value="1.9563116407740888" />
+      <entry key="S10" value="2.8830544685699806" />
+      <entry key="S30" value="5.14418766346989" />
+      <entry key="S60" value="6.434413274552628" />
+      <entry key="M2" value="7.667906747628408" />
+      <entry key="M5" value="9.17166233241399" />
+      <entry key="M10" value="10.051259477504978" />
+      <entry key="M15" value="11.117298836791116" />
+      <entry key="M30" value="21.669299546787123" />
+      <entry key="H1" value="66.49246313886577" />
+      <entry key="H2" value="171.52306037693967" />
+      <entry key="H4" value="317.6934774596724" />
+      <entry key="D1" value="578.8163052847058" />
+      <entry key="W1" value="646.7698309054875" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="2.200318581547008E-4" />
+      <entry key="MS500" value="0.19142904948751677" />
+      <entry key="S2" value="0.9472093999703644" />
+      <entry key="S5" value="1.8229623019140326" />
+      <entry key="S10" value="3.2124181061767576" />
+      <entry key="S30" value="6.596067164450927" />
+      <entry key="S60" value="8.510303115918237" />
+      <entry key="M2" value="10.155136143175657" />
+      <entry key="M5" value="11.949828941545082" />
+      <entry key="M10" value="12.973395378530155" />
+      <entry key="M15" value="14.430217286924423" />
+      <entry key="M30" value="29.9418530544706" />
+      <entry key="H1" value="96.63582513481894" />
+      <entry key="H2" value="255.87449720731976" />
+      <entry key="H4" value="481.8007037272471" />
+      <entry key="D1" value="891.9713780840334" />
+      <entry key="W1" value="999.5991159953734" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3GOgbIdY3RhLf426UeMCgT47hCl" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.DriverServiceApplication.executor": "Run",
+    "JUnit.DriverServiceImplTest$DeleteDriverTests.deleteDriverSuccessfully.executor": "Run",
+    "JUnit.DriverServiceImplTest$DeleteDriverTests.shouldSuccessfullyUpdateDriverAvailability.executor": "Run",
+    "JUnit.DriverServiceImplTest$DeleteDriverTests.shouldThrowBusinessRuleViolationExceptionForSameRequest.executor": "Run",
+    "JUnit.DriverServiceImplTest$DeleteDriverTests.shouldThrowBusinessRuleViolationExceptionIfDriverNotApproved.executor": "Run",
+    "JUnit.DriverServiceImplTest$DeleteDriverTests.shouldThrowBusinessRuleViolationExceptionWhileDriving.executor": "Run",
+    "JUnit.DriverServiceImplTest$DeleteDriverTests.shouldThrowResourceNotFoundExceptionWhenDriverNotFound.executor": "Run",
+    "JUnit.DriverServiceImplTest$DriverRegistrationTests.executor": "Run",
+    "JUnit.DriverServiceImplTest$DriverRegistrationTests.shouldThrowDuplicateResourceExceptionWhenLicenseNumberExists.executor": "Run",
+    "JUnit.DriverServiceImplTest$DriverRegistrationTests.shouldThrowDuplicateResourceExceptionWhenVehicleNumberExists.executor": "Run",
+    "JUnit.DriverServiceImplTest$GetDriverAvailabilityTests.executor": "Run",
+    "JUnit.DriverServiceImplTest$GetDriverTests.executor": "Run",
+    "JUnit.DriverServiceImplTest$UpdateDriverTests.DriverUpdateSuccessful.executor": "Run",
+    "JUnit.DriverServiceImplTest$UpdateDriverTests.executor": "Run",
+    "JUnit.DriverServiceImplTest$UpdateDriverTests.shouldThrowDuplicateResourceExceptionWhenOldVNIsRequested.executor": "Run",
+    "JUnit.DriverServiceImplTest$UpdateDriverTests.shouldThrowDuplicateResourceExceptionWhenVNExistsOrSame.executor": "Run",
+    "JUnit.DriverServiceImplTest$UpdateDriverTests.shouldThrowResourceNotFoundExceptionWhenDriverIdNotFound.executor": "Run",
+    "JUnit.DriverServiceImplTest$UpdateDriverTests.shouldUpdateSuccessfullyWhenVehicleNumberIsUnchanged.executor": "Run",
+    "JUnit.DriverServiceImplTest.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.DriverServiceApplication.executor": "Run",
+    "Spring Boot.DriverserviceApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "kafka-integration",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/RIDEHUB DRIVER SERVICE/driverservice/src/main/java/com/ridehub/driverservice",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "to.speed.mode.migration.done": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\RIDEHUB DRIVER SERVICE\driverservice\src\main\java\com\ridehub\driverservice" />
+      <recent name="D:\RIDEHUB DRIVER SERVICE\driverservice\src\main\java\com\ridehub\driverservice\exception" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\RIDEHUB DRIVER SERVICE\driverservice\src\main\java\com\ridehub\driverservice" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.ridehub.driverservice.security.service" />
+      <recent name="com.ridehub.driverservice.service.impl" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ridehub.driverservice.kafka.dto" />
+      <recent name="com.ridehub.driverservice.dto.response" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.DriverServiceApplication">
+    <configuration name="DriverServiceApplication" type="Application" factoryName="Application">
+      <envs>
+        <env name="DB_PASSWORD" value="Sahasra@04" />
+        <env name="DB_URL" value="jdbc:postgresql://localhost:5432/ridehub_driver_db" />
+        <env name="DB_USERNAME" value="postgres" />
+        <env name="JWT_SECRET" value="ThisIsAVeryLongSecretKeyForRideHubApplication2026DevelopmentKey" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="com.ridehub.driverservice.DriverServiceApplication" />
+      <module name="driverservice" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DriverServiceImplTest$DeleteDriverTests.shouldThrowBusinessRuleViolationExceptionForSameRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="driverservice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ridehub.driverservice.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ridehub.driverservice.service.impl.DriverServiceImplTest" />
+      <option name="MAIN_CLASS_NAME" value="com.ridehub.driverservice.service.impl.DriverServiceImplTest$DeleteDriverTests" />
+      <option name="METHOD_NAME" value="shouldThrowBusinessRuleViolationExceptionForSameRequest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DriverServiceImplTest$GetDriverAvailabilityTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="driverservice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ridehub.driverservice.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ridehub.driverservice.service.impl.DriverServiceImplTest" />
+      <option name="MAIN_CLASS_NAME" value="com.ridehub.driverservice.service.impl.DriverServiceImplTest$GetDriverAvailabilityTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DriverServiceImplTest$GetDriverTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="driverservice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ridehub.driverservice.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ridehub.driverservice.service.impl.DriverServiceImplTest" />
+      <option name="MAIN_CLASS_NAME" value="com.ridehub.driverservice.service.impl.DriverServiceImplTest$GetDriverTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DriverServiceImplTest$UpdateDriverTests.shouldThrowDuplicateResourceExceptionWhenVNExistsOrSame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="driverservice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ridehub.driverservice.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ridehub.driverservice.service.impl.DriverServiceImplTest" />
+      <option name="MAIN_CLASS_NAME" value="com.ridehub.driverservice.service.impl.DriverServiceImplTest$UpdateDriverTests" />
+      <option name="METHOD_NAME" value="shouldThrowDuplicateResourceExceptionWhenVNExistsOrSame" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DriverServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="driverservice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ridehub.driverservice.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ridehub.driverservice.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.ridehub.driverservice.service.impl.DriverServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.DriverServiceApplication" />
+      <item itemvalue="JUnit.DriverServiceImplTest" />
+      <item itemvalue="JUnit.DriverServiceImplTest$DeleteDriverTests.shouldThrowBusinessRuleViolationExceptionForSameRequest" />
+      <item itemvalue="JUnit.DriverServiceImplTest$GetDriverAvailabilityTests" />
+      <item itemvalue="JUnit.DriverServiceImplTest$GetDriverTests" />
+      <item itemvalue="JUnit.DriverServiceImplTest$UpdateDriverTests.shouldThrowDuplicateResourceExceptionWhenVNExistsOrSame" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.DriverServiceImplTest" />
+        <item itemvalue="JUnit.DriverServiceImplTest$GetDriverTests" />
+        <item itemvalue="JUnit.DriverServiceImplTest$GetDriverAvailabilityTests" />
+        <item itemvalue="JUnit.DriverServiceImplTest$UpdateDriverTests.shouldThrowDuplicateResourceExceptionWhenVNExistsOrSame" />
+        <item itemvalue="JUnit.DriverServiceImplTest$DeleteDriverTests.shouldThrowBusinessRuleViolationExceptionForSameRequest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.25134.95" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3916cbe5-c192-459b-9273-5ceb5c7d2d38" name="Changes" comment="" />
+      <created>1783848099956</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1783848099956</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/driverservice/src/main/java/com/ridehub/driverservice/service/impl/DriverServiceImpl.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/driverservice/src/main/java/com/ridehub/driverservice/service/impl/DriverServiceImpl.java</url>
+          <line>129</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/driverservice/src/test/java/com/ridehub/driverservice/service/impl/DriverServiceImplTest.java</url>
+          <line>254</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/driverservice/src/test/java/com/ridehub/driverservice/service/impl/DriverServiceImplTest.java</url>
+          <line>209</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/driverservice/src/test/java/com/ridehub/driverservice/service/impl/DriverServiceImplTest.java</url>
+          <line>158</line>
+          <properties class="com.ridehub.driverservice.service.impl.DriverServiceImplTest.UpdateDriverTests" method="shouldThrowResourceNotFoundExceptionWhenDriverIdNotFound">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/driverservice/src/test/java/com/ridehub/driverservice/service/impl/DriverServiceImplTest.java</url>
+          <line>281</line>
+          <properties class="com.ridehub.driverservice.service.impl.DriverServiceImplTest.UpdateDriverAvailabilityTests" method="shouldThrowBusinessRuleViolationExceptionWhileDrivingOffline">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/driverservice/src/test/java/com/ridehub/driverservice/service/impl/DriverServiceImplTest.java</url>
+          <line>167</line>
+          <properties class="com.ridehub.driverservice.service.impl.DriverServiceImplTest.UpdateDriverTests" method="shouldThrowDuplicateResourceExceptionWhenVNExistsOrSame">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/driverservice/src/test/java/com/ridehub/driverservice/service/impl/DriverServiceImplTest.java</url>
+          <line>294</line>
+          <properties class="com.ridehub.driverservice.service.impl.DriverServiceImplTest.UpdateDriverAvailabilityTests" method="shouldThrowBusinessRuleViolationExceptionWhileDrivingOnline">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/driverservice/src/test/java/com/ridehub/driverservice/service/impl/DriverServiceImplTest.java</url>
+          <line>256</line>
+          <properties class="com.ridehub.driverservice.service.impl.DriverServiceImplTest.UpdateDriverAvailabilityTests" method="shouldSuccessfullyUpdateDriverAvailability">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/driverservice/src/test/java/com/ridehub/driverservice/service/impl/DriverServiceImplTest.java</url>
+          <line>243</line>
+          <properties class="com.ridehub.driverservice.service.impl.DriverServiceImplTest.DeleteDriverTests" method="shouldThrowResourceNotFoundExceptionWhenDriverNotFound">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/driverservice/src/test/java/com/ridehub/driverservice/service/impl/DriverServiceImplTest.java</url>
+          <line>325</line>
+          <properties class="com.ridehub.driverservice.service.impl.DriverServiceImplTest.GetDriverAvailabilityTests" method="getDriverAvailabilitySuccessfully">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
