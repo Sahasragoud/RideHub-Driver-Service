@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3916cbe5-c192-459b-9273-5ceb5c7d2d38" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/driverservice/src/main/java/com/ridehub/driverservice/dto/request/DriverAvailabilityUpdateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/driverservice/src/main/java/com/ridehub/driverservice/dto/request/DriverAvailabilityUpdateRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/driverservice/src/main/java/com/ridehub/driverservice/kafka/consumer/RideEventConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/driverservice/src/main/java/com/ridehub/driverservice/kafka/consumer/RideEventConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/driverservice/src/main/java/com/ridehub/driverservice/kafka/dto/RideCancelledEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/driverservice/src/main/java/com/ridehub/driverservice/kafka/dto/RideCancelledEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/driverservice/src/main/java/com/ridehub/driverservice/security/service/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/driverservice/src/main/java/com/ridehub/driverservice/security/service/JwtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/driverservice/src/main/java/com/ridehub/driverservice/service/impl/DriverServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/driverservice/src/main/java/com/ridehub/driverservice/service/impl/DriverServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/driverservice/src/test/java/com/ridehub/driverservice/DriverserviceApplicationTests.java" beforeDir="false" />
-    </list>
+    <list default="true" id="b6f36e0e-972d-4d69-842d-8f59d98425f2" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,54 +108,54 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Application.DriverServiceApplication.executor": "Run",
-    "JUnit.DriverServiceImplTest$DeleteDriverTests.deleteDriverSuccessfully.executor": "Run",
-    "JUnit.DriverServiceImplTest$DeleteDriverTests.shouldSuccessfullyUpdateDriverAvailability.executor": "Run",
-    "JUnit.DriverServiceImplTest$DeleteDriverTests.shouldThrowBusinessRuleViolationExceptionForSameRequest.executor": "Run",
-    "JUnit.DriverServiceImplTest$DeleteDriverTests.shouldThrowBusinessRuleViolationExceptionIfDriverNotApproved.executor": "Run",
-    "JUnit.DriverServiceImplTest$DeleteDriverTests.shouldThrowBusinessRuleViolationExceptionWhileDriving.executor": "Run",
-    "JUnit.DriverServiceImplTest$DeleteDriverTests.shouldThrowResourceNotFoundExceptionWhenDriverNotFound.executor": "Run",
-    "JUnit.DriverServiceImplTest$DriverRegistrationTests.executor": "Run",
-    "JUnit.DriverServiceImplTest$DriverRegistrationTests.shouldThrowDuplicateResourceExceptionWhenLicenseNumberExists.executor": "Run",
-    "JUnit.DriverServiceImplTest$DriverRegistrationTests.shouldThrowDuplicateResourceExceptionWhenVehicleNumberExists.executor": "Run",
-    "JUnit.DriverServiceImplTest$GetDriverAvailabilityTests.executor": "Run",
-    "JUnit.DriverServiceImplTest$GetDriverTests.executor": "Run",
-    "JUnit.DriverServiceImplTest$UpdateDriverTests.DriverUpdateSuccessful.executor": "Run",
-    "JUnit.DriverServiceImplTest$UpdateDriverTests.executor": "Run",
-    "JUnit.DriverServiceImplTest$UpdateDriverTests.shouldThrowDuplicateResourceExceptionWhenOldVNIsRequested.executor": "Run",
-    "JUnit.DriverServiceImplTest$UpdateDriverTests.shouldThrowDuplicateResourceExceptionWhenVNExistsOrSame.executor": "Run",
-    "JUnit.DriverServiceImplTest$UpdateDriverTests.shouldThrowResourceNotFoundExceptionWhenDriverIdNotFound.executor": "Run",
-    "JUnit.DriverServiceImplTest$UpdateDriverTests.shouldUpdateSuccessfullyWhenVehicleNumberIsUnchanged.executor": "Run",
-    "JUnit.DriverServiceImplTest.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.DriverServiceApplication.executor": "Run",
-    "Spring Boot.DriverserviceApplication.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "kafka-integration",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/RIDEHUB DRIVER SERVICE/driverservice/src/main/java/com/ridehub/driverservice",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Application.DriverServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DriverServiceImplTest$DeleteDriverTests.deleteDriverSuccessfully.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DriverServiceImplTest$DeleteDriverTests.shouldSuccessfullyUpdateDriverAvailability.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DriverServiceImplTest$DeleteDriverTests.shouldThrowBusinessRuleViolationExceptionForSameRequest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DriverServiceImplTest$DeleteDriverTests.shouldThrowBusinessRuleViolationExceptionIfDriverNotApproved.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DriverServiceImplTest$DeleteDriverTests.shouldThrowBusinessRuleViolationExceptionWhileDriving.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DriverServiceImplTest$DeleteDriverTests.shouldThrowResourceNotFoundExceptionWhenDriverNotFound.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DriverServiceImplTest$DriverRegistrationTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DriverServiceImplTest$DriverRegistrationTests.shouldThrowDuplicateResourceExceptionWhenLicenseNumberExists.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DriverServiceImplTest$DriverRegistrationTests.shouldThrowDuplicateResourceExceptionWhenVehicleNumberExists.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DriverServiceImplTest$GetDriverAvailabilityTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DriverServiceImplTest$GetDriverTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DriverServiceImplTest$UpdateDriverTests.DriverUpdateSuccessful.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DriverServiceImplTest$UpdateDriverTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DriverServiceImplTest$UpdateDriverTests.shouldThrowDuplicateResourceExceptionWhenOldVNIsRequested.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DriverServiceImplTest$UpdateDriverTests.shouldThrowDuplicateResourceExceptionWhenVNExistsOrSame.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DriverServiceImplTest$UpdateDriverTests.shouldThrowResourceNotFoundExceptionWhenDriverIdNotFound.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DriverServiceImplTest$UpdateDriverTests.shouldUpdateSuccessfullyWhenVehicleNumberIsUnchanged.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DriverServiceImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.DriverServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.DriverserviceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;kafka-integration&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/RIDEHUB DRIVER SERVICE/driverservice/src/main/java/com/ridehub/driverservice&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\RIDEHUB DRIVER SERVICE\driverservice\src\main\java\com\ridehub\driverservice" />
@@ -339,7 +332,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/driverservice/src/test/java/com/ridehub/driverservice/service/impl/DriverServiceImplTest.java</url>
           <line>158</line>
-          <properties class="com.ridehub.driverservice.service.impl.DriverServiceImplTest.UpdateDriverTests" method="shouldThrowResourceNotFoundExceptionWhenDriverIdNotFound">
+          <properties class="com.ridehub.driverservice.service.impl.DriverServiceImplTest.UpdateDriverTests">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -348,7 +341,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/driverservice/src/test/java/com/ridehub/driverservice/service/impl/DriverServiceImplTest.java</url>
           <line>281</line>
-          <properties class="com.ridehub.driverservice.service.impl.DriverServiceImplTest.UpdateDriverAvailabilityTests" method="shouldThrowBusinessRuleViolationExceptionWhileDrivingOffline">
+          <properties class="com.ridehub.driverservice.service.impl.DriverServiceImplTest.UpdateDriverAvailabilityTests">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -357,7 +350,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/driverservice/src/test/java/com/ridehub/driverservice/service/impl/DriverServiceImplTest.java</url>
           <line>167</line>
-          <properties class="com.ridehub.driverservice.service.impl.DriverServiceImplTest.UpdateDriverTests" method="shouldThrowDuplicateResourceExceptionWhenVNExistsOrSame">
+          <properties class="com.ridehub.driverservice.service.impl.DriverServiceImplTest.UpdateDriverTests">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -366,7 +359,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/driverservice/src/test/java/com/ridehub/driverservice/service/impl/DriverServiceImplTest.java</url>
           <line>294</line>
-          <properties class="com.ridehub.driverservice.service.impl.DriverServiceImplTest.UpdateDriverAvailabilityTests" method="shouldThrowBusinessRuleViolationExceptionWhileDrivingOnline">
+          <properties class="com.ridehub.driverservice.service.impl.DriverServiceImplTest.UpdateDriverAvailabilityTests">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -375,7 +368,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/driverservice/src/test/java/com/ridehub/driverservice/service/impl/DriverServiceImplTest.java</url>
           <line>256</line>
-          <properties class="com.ridehub.driverservice.service.impl.DriverServiceImplTest.UpdateDriverAvailabilityTests" method="shouldSuccessfullyUpdateDriverAvailability">
+          <properties class="com.ridehub.driverservice.service.impl.DriverServiceImplTest.UpdateDriverAvailabilityTests">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -384,7 +377,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/driverservice/src/test/java/com/ridehub/driverservice/service/impl/DriverServiceImplTest.java</url>
           <line>243</line>
-          <properties class="com.ridehub.driverservice.service.impl.DriverServiceImplTest.DeleteDriverTests" method="shouldThrowResourceNotFoundExceptionWhenDriverNotFound">
+          <properties class="com.ridehub.driverservice.service.impl.DriverServiceImplTest.DeleteDriverTests">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -393,7 +386,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/driverservice/src/test/java/com/ridehub/driverservice/service/impl/DriverServiceImplTest.java</url>
           <line>325</line>
-          <properties class="com.ridehub.driverservice.service.impl.DriverServiceImplTest.GetDriverAvailabilityTests" method="getDriverAvailabilitySuccessfully">
+          <properties class="com.ridehub.driverservice.service.impl.DriverServiceImplTest.GetDriverAvailabilityTests">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
