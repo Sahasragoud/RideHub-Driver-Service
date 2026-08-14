@@ -3,6 +3,7 @@ package com.ridehub.driverservice.kafka.consumer;
 
 import com.ridehub.driverservice.entity.Driver;
 import com.ridehub.driverservice.enums.AvailabilityStatus;
+import com.ridehub.driverservice.exception.ResourceNotFoundException;
 import com.ridehub.driverservice.kafka.dto.*;
 import com.ridehub.driverservice.kafka.publisher.DriverEventPublisher;
 import com.ridehub.driverservice.repository.DriverRepository;
@@ -28,24 +29,41 @@ public class RideEventConsumer {
             RideAssignedEvent event) {
 
         log.info(
-                "Ride {} assigned to driver {}",
+                "Received RideAssignedEvent. Ride={}, Driver={}",
                 event.getRideId(),
-                event.getDriverId());
-
-        Driver driver = driverRepository.findById(event.getDriverId())
-                .orElseThrow();
-
-        driver.setAvailability(AvailabilityStatus.ON_TRIP);
-        driverRepository.save(driver);
-
-        driverEventPublisher.publishDriverAvailabilityChanged(
-                DriverAvailabilityChangedEvent.builder()
-                        .driverId(driver.getId())
-                        .userId(driver.getUserId())
-                        .available(false)
-                        .changedAt(LocalDateTime.now())
-                        .build()
+                event.getDriverId()
         );
+
+        Driver driver = driverRepository
+                .findByUserId(event.getDriverId())
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("Driver not found."));
+
+        if (driver.getAvailability() != AvailabilityStatus.ON_TRIP) {
+
+            driver.setAvailability(AvailabilityStatus.ON_TRIP);
+            driverRepository.save(driver);
+
+            driverEventPublisher.publishDriverBusyEvent(
+
+                    DriverBusyEvent.builder()
+                            .driverId(driver.getId())
+                            .userId(driver.getUserId())
+                            .rideId(event.getRideId())
+                            .busyAt(LocalDateTime.now())
+                            .build()
+            );
+
+            driverEventPublisher.publishDriverAvailabilityChanged(
+                    DriverAvailabilityChangedEvent.builder()
+                            .driverId(driver.getId())
+                            .userId(driver.getUserId())
+                            .available(false)
+                            .changedAt(LocalDateTime.now())
+                            .build()
+            );
+
+        }
     }
 
     @KafkaListener(
@@ -55,14 +73,27 @@ public class RideEventConsumer {
             RideCompletedEvent event) {
 
         log.info(
-                "Ride {} completed",
-                event.getRideId());
+                "Received RideCompletedEvent. Ride={}, Driver={}",
+                event.getRideId(),
+                event.getDriverId()
+        );
 
-        Driver driver = driverRepository.findById(event.getDriverId())
-                .orElseThrow();
+        Driver driver = driverRepository
+                .findByUserId(event.getDriverId())
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("Driver not found."));
 
         driver.setAvailability(AvailabilityStatus.ONLINE);
         driverRepository.save(driver);
+
+        driverEventPublisher.publishDriverAvailableEvent(
+
+                DriverAvailableEvent.builder()
+                        .driverId(driver.getId())
+                        .userId(driver.getUserId())
+                        .availableAt(LocalDateTime.now())
+                        .build()
+        );
 
         driverEventPublisher.publishDriverAvailabilityChanged(
                 DriverAvailabilityChangedEvent.builder()
@@ -81,10 +112,41 @@ public class RideEventConsumer {
             RideCancelledEvent event) {
 
         log.info(
-                "Ride {} cancelled",
-                event.getRideId());
+                "Received RideCancelledEvent. Ride={}, Driver={}",
+                event.getRideId(),
+                event.getDriverId()
+        );
 
-        // optional depending on business rules
+        Driver driver = driverRepository
+                .findByUserId(event.getDriverId())
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("Driver not found."));
+
+        if (driver.getAvailability() == AvailabilityStatus.ON_TRIP) {
+
+            driver.setAvailability(AvailabilityStatus.ONLINE);
+
+            driverRepository.save(driver);
+
+            driverEventPublisher.publishDriverAvailableEvent(
+
+                    DriverAvailableEvent.builder()
+                            .driverId(driver.getId())
+                            .userId(driver.getUserId())
+                            .availableAt(LocalDateTime.now())
+                            .build()
+            );
+
+            driverEventPublisher.publishDriverAvailabilityChanged(
+
+                    DriverAvailabilityChangedEvent.builder()
+                            .driverId(driver.getId())
+                            .userId(driver.getUserId())
+                            .available(true)
+                            .changedAt(LocalDateTime.now())
+                            .build()
+            );
+        }
     }
 
     @KafkaListener(
@@ -94,8 +156,10 @@ public class RideEventConsumer {
             RideStartedEvent event) {
 
         log.info(
-                "Ride {} started",
-                event.getRideId());
+                "Received RideStartedEvent. Ride={}, Driver={}",
+                event.getRideId(),
+                event.getDriverId()
+        );
     }
 
 }

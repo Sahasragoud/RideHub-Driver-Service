@@ -13,6 +13,8 @@ public class RideCancelledEvent {
 
     private Long rideId;
 
+    private Long driverId;
+
     private String reason;
 
     private LocalDateTime cancelledAt;

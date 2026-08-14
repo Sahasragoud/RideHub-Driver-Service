@@ -154,7 +154,7 @@ public class DriverServiceImpl implements DriverService {
             DriverAvailabilityUpdateRequest request) {
 
 
-        log.info("Updating availability for userId: {}", userId);
+        log.info("Availability update request for userId: {}", userId);
 
         Driver driver = driverRepository.findByUserId(userId)
                 .orElseThrow(() ->
