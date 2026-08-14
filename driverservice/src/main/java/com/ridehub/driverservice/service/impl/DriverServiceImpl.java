@@ -11,6 +11,9 @@ import com.ridehub.driverservice.enums.DriverStatus;
 import com.ridehub.driverservice.exception.DuplicateResourceException;
 import com.ridehub.driverservice.exception.BusinessRuleViolationException;
 import com.ridehub.driverservice.exception.ResourceNotFoundException;
+import com.ridehub.driverservice.kafka.dto.DriverAvailabilityChangedEvent;
+import com.ridehub.driverservice.kafka.dto.DriverRegisteredEvent;
+import com.ridehub.driverservice.kafka.publisher.DriverEventPublisher;
 import com.ridehub.driverservice.repository.DriverRepository;
 import com.ridehub.driverservice.service.interfaces.DriverService;
 import lombok.RequiredArgsConstructor;
@@ -23,6 +26,7 @@ import org.springframework.stereotype.Service;
 public class DriverServiceImpl implements DriverService {
 
     private final DriverRepository driverRepository;
+    private final DriverEventPublisher driverEventPublisher;
 
     @Override
     public DriverResponse registerDriver(
@@ -59,6 +63,18 @@ public class DriverServiceImpl implements DriverService {
                 .build();
 
         Driver savedDriver = driverRepository.save(driver);
+
+        driverEventPublisher.publishDriverRegistered(
+
+                DriverRegisteredEvent.builder()
+                        .driverId(savedDriver.getId())
+                        .userId(savedDriver.getUserId())
+                        .vehicleNumber(savedDriver.getVehicleNumber())
+                        .vehicleType(savedDriver.getVehicleType())
+                        .available(savedDriver.getAvailability() == AvailabilityStatus.ONLINE)
+                        .registeredAt(savedDriver.getCreatedAt())
+                        .build()
+        );
 
         log.info("Driver profile created successfully. Driver ID: {}",
                 savedDriver.getId());
@@ -138,7 +154,7 @@ public class DriverServiceImpl implements DriverService {
             DriverAvailabilityUpdateRequest request) {
 
 
-        log.info("Updating availability for userId: {}", userId);
+        log.info("Availability update request for userId: {}", userId);
 
         Driver driver = driverRepository.findByUserId(userId)
                 .orElseThrow(() ->
@@ -175,6 +191,16 @@ public class DriverServiceImpl implements DriverService {
         driver.setAvailability(request.getAvailability());
 
         Driver updatedDriver = driverRepository.save(driver);
+
+        driverEventPublisher.publishDriverAvailabilityChanged(
+
+                DriverAvailabilityChangedEvent.builder()
+                        .driverId(updatedDriver.getId())
+                        .userId(updatedDriver.getUserId())
+                        .available(updatedDriver.getAvailability() == AvailabilityStatus.ONLINE)
+                        .changedAt(java.time.LocalDateTime.now())
+                        .build()
+        );
 
         log.info(
                 "Driver {} availability changed to {}",

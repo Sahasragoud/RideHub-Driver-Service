@@ -27,27 +27,18 @@ public class JwtService {
         return extractClaim(token, Claims::getExpiration);
     }
 
-    public <T> T extractClaim(
-            String token,
-            Function<Claims, T> claimsResolver) {
+    public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
 
         Claims claims = extractAllClaims(token);
         return claimsResolver.apply(claims);
     }
 
-    public boolean isTokenValid(
-            String token,
-            UserDetails userDetails) {
+    public boolean isTokenValid(String token, UserDetails userDetails) {
 
         String username = extractUsername(token);
 
         return username.equals(userDetails.getUsername())
                 && !isTokenExpired(token);
-    }
-
-    private boolean isTokenExpired(String token) {
-        return extractExpiration(token)
-                .before(new Date());
     }
 
     public Claims extractAllClaims(String token) {
@@ -59,14 +50,6 @@ public class JwtService {
                 .getPayload();
     }
 
-    private SecretKey getSigningKey() {
-
-        return Keys.hmacShaKeyFor(
-                jwtProperties.getSecret()
-                        .getBytes(StandardCharsets.UTF_8)
-        );
-    }
-
     public String extractRole(String token) {
         return extractAllClaims(token)
                 .get("role", String.class);
@@ -76,5 +59,19 @@ public class JwtService {
         return extractAllClaims(token)
                 .get("userId", Long.class);
     }
+
+    private boolean isTokenExpired(String token) {
+        return extractExpiration(token)
+                .before(new Date());
+    }
+
+    private SecretKey getSigningKey() {
+
+        return Keys.hmacShaKeyFor(
+                jwtProperties.getSecret()
+                        .getBytes(StandardCharsets.UTF_8)
+        );
+    }
+
 
 }
