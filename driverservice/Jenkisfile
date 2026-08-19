@@ -22,7 +22,7 @@ pipeline {
                 dir('driverservice'){
                     withCredentials([
                         string(
-                            credentialsId: 'ridehub_driver_db',
+                            credentialsId: 'ridehub_driver_db-url',
                             variable: 'DB_URL'
                         ),
                         usernamePassword(
