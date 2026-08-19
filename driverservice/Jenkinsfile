@@ -44,6 +44,14 @@ pipeline {
                 }
             }
         }
+
+        stage('Docker Build'){
+            steps{
+                dir('driverservice'){
+                    sh 'docker build -t ridehub-driver-service:${BUILD_NUMBER}.'
+                }
+            }
+        }
     }
 
     post {
