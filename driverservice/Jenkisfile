@@ -1,0 +1,57 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout SCM') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Verify Environment'){
+            steps{
+                sh 'java -version'
+                sh 'mvn -version'
+                sh -docker --version'
+            }
+        }
+
+        stage('Test'){
+            steps{
+                dir('driverservice'){
+                    withCredentials([
+                        string(
+                            credentialsId: 'ridehub_driver_db',
+                            variable: 'DB_URL'
+                        ),
+                        usernamePassword(
+                            credentialsId: 'ridehub-db',
+                            usernameVariable: 'DB_USERNAME',
+                            passwordVariable: 'DB_PASSWORD'
+                        )
+                    ]){
+                        sh 'mvn clean test'
+                    }
+                }
+            }
+        }
+
+        stage('build'){
+            steps{
+                dir('driverservice'){
+                    sh 'mvn package -DskipTests'
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Tests and build completed successfully!'
+        }
+        failure{
+            echo 'Pipeline failed. Check the jenkins console output'
+        }
+    }
+}
