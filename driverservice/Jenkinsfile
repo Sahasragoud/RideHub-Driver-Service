@@ -110,7 +110,7 @@ pipeline {
                             variable: 'JWT_SECRET'
                         )
                     ]) {
-                        sshagent(credentials: ['ec2-ssh-key']) {
+                        sshagent(credentials: ['ridehub-driver-ec2-ssh-key']) {
                             sh '''
                                 AWS_REGION="ap-south-2"
                                 AWS_ACCOUNT_ID="115628507548"
